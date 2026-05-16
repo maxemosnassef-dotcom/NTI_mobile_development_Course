@@ -24,7 +24,7 @@ class Textbox extends StatelessWidget {
         SizedBox(height: 5),
         Container(
           height: 1,
-          width: 340,
+          width: 250,
           decoration: BoxDecoration(color: Colors.white),
         ),
       ],

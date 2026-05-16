@@ -16,8 +16,8 @@ class SubTitles extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        "${title1} . ${title2} . ${title3}",
-        style: TextStyle(color: Colors.white, fontSize: 19),
+        "$title1 . $title2 . $title3",
+        style: TextStyle(color: Colors.white, fontSize: 16),
       ),
     );
   }

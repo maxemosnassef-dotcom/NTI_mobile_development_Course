@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/counter.dart';
 
 class Item extends StatelessWidget {
   final String image;
@@ -10,13 +11,16 @@ class Item extends StatelessWidget {
     return Stack(
       alignment: Alignment.bottomLeft,
       children: [
-        Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/${image}"),
-              // width: 200, // Adjust based on your screen width
-              // height: 200,
-              fit: BoxFit.fill,
+        GestureDetector(
+          onTap: () => Navigator.pushNamed(context, CounterScreen.routeName),
+          child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/$image"),
+                // width: 200, // Adjust based on your screen width
+                // height: 200,
+                fit: BoxFit.fill,
+              ),
             ),
           ),
         ),
@@ -27,7 +31,7 @@ class Item extends StatelessWidget {
             color: Colors.purple.withAlpha(150),
             alignment: Alignment.center,
             child: Text(
-              "${Caption}",
+              Caption,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,

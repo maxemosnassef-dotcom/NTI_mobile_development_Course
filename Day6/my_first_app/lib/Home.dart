@@ -1,46 +1,78 @@
 import 'package:flutter/material.dart';
-import 'Background.dart';
-import 'PageTitle.dart';
-import 'SubTitles.dart';
-import 'Sign.dart';
-import 'Button.dart';
-import 'TextBox.dart';
+import 'Item.dart';
+import 'UpBarTitle.dart';
 
 class Home extends StatelessWidget {
   Home({super.key});
+  static const String routeName = "Home";
+
+  List<Item> Items1 = [
+    Item(image: 'Technology.jpeg', Caption: 'التكنولوجيا'),
+    Item(image: 'economics.png', Caption: 'الاقتصاد'),
+    Item(image: "Sports.webp", Caption: 'الرياضة'),
+    Item(image: 'Tourism.jpg', Caption: 'السياحه'),
+    Item(image: 'Car.jpg', Caption: 'السيارات'),
+    Item(image: 'Politics.jpg', Caption: 'السياسه'),
+    Item(image: 'Health.jpeg', Caption: 'الصحه'),
+    Item(image: 'Food.jpg', Caption: 'الطهى'),
+    Item(image: 'IQ.png', Caption: 'المعرفة'),
+    Item(image: 'Eva.jpg', Caption: 'حواء'),
+    Item(image: 'Technology.jpeg', Caption: 'التكنولوجيا'),
+    Item(image: 'economics.png', Caption: 'الاقتصاد'),
+    Item(image: "Sports.webp", Caption: 'الرياضة'),
+    Item(image: 'Tourism.jpg', Caption: 'السياحه'),
+    Item(image: 'Car.jpg', Caption: 'السيارات'),
+    Item(image: 'Politics.jpg', Caption: 'السياسه'),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
+      body: Column(
         children: [
-          Background(
-            Color1: 0xFF0F2027,
-            Color2: 0xFF203A43,
-            Color3: 0xFF2C5364,
+          SizedBox(height: 37),
+          Row(
+            children: [
+              Expanded(
+                child: UpBarTitle(text: "الأخبار", topLeft: 20, topRight: 0),
+              ),
+              SizedBox(width: 2),
+              Expanded(
+                child: UpBarTitle(text: "المجلات", topLeft: 0, topRight: 20),
+              ),
+            ],
           ),
 
-          // SizedBox(height: 30),
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: Column(
-              children: [
-                SizedBox(height: 100),
-                PageTitle(title: "MOMENTUM"),
-                SubTitles(title1: "GROWTH", title2: "HAPPENS", title3: "TODAY"),
-                SizedBox(height: 100),
-                Sign(), // sign In Sign Up
-                SizedBox(height: 80),
-                Textbox(Caption: "Enter Your Email", image: Icons.mail),
-                SizedBox(height: 40),
-                Textbox(Caption: "Enter Your Password", image: Icons.lock),
+          // Expanded(
+          //   child: ListView.builder(
+          //     itemCount: Items.length,
+          //     padding: EdgeInsets.all(5),
+          //     itemBuilder: (BuildContext context, int index) {
+          //       return Item(
+          //         image: Items[index].image,
+          //         Caption: Items[index].Caption,
+          //       );
+          //     },
+          //   ),
+          // ),
+          Expanded(
+            child: GridView.builder(
+              itemCount: Items1.length,
+              padding: EdgeInsets.only(top: 5),
+              physics: const BouncingScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 570 / 350,
+                crossAxisSpacing: 3,
+                mainAxisSpacing: 5,
+              ),
 
-                SizedBox(height: 250),
-
-                Button(),
-              ],
+              itemBuilder: (BuildContext context, int index) {
+                return Item(
+                  image: Items1[index].image,
+                  Caption: Items1[index].Caption,
+                );
+              },
             ),
           ),
         ],

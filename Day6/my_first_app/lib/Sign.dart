@@ -11,14 +11,14 @@ class Sign extends StatelessWidget {
         Container(
           child: Text(
             "SIGN IN",
-            style: TextStyle(fontSize: 20, color: Colors.white),
+            style: TextStyle(fontSize: 18, color: Colors.white),
           ),
         ),
         // SizedBox(width: 100),
         Container(
           child: Text(
             "SIGN UP",
-            style: TextStyle(fontSize: 20, color: Colors.white),
+            style: TextStyle(fontSize: 18, color: Colors.white),
           ),
         ),
       ],
