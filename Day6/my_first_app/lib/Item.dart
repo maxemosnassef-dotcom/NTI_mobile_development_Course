@@ -22,18 +22,9 @@ class Item extends StatelessWidget {
         ),
         Positioned(
           bottom: 15,
-          right: 20,
+          right: 5,
           child: Container(
-            padding: EdgeInsets.only(right: 10, left: 10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
-              gradient: LinearGradient(
-                colors: [
-                  Color.fromARGB(255, 59, 1, 63).withAlpha(150),
-                  Color.fromARGB(255, 125, 9, 133),
-                ],
-              ),
-            ),
+            color: Colors.purple.withAlpha(150),
             alignment: Alignment.center,
             child: Text(
               "${Caption}",
