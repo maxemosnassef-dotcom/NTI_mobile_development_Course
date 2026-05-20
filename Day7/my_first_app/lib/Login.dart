@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/Custom_form_text.dart';
 import 'Background.dart';
 import 'PageTitle.dart';
 import 'SubTitles.dart';
 import 'Sign.dart';
 import 'Button.dart';
-import 'TextBox.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -28,16 +28,50 @@ class Login extends StatelessWidget {
             right: 0,
 
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+
               children: [
-                SizedBox(height: 100),
+                SizedBox(height: 30),
                 PageTitle(title: "MOMENTUM"),
                 SubTitles(title1: "GROWTH", title2: "HAPPENS", title3: "TODAY"),
                 SizedBox(height: 60),
                 Sign(), // sign In Sign Up
                 SizedBox(height: 60),
-                Textbox(Caption: "Enter Your Email", image: Icons.mail),
+
+                CustomSign(
+                  key: key,
+                  hint: "Enter Your Email",
+                  icon: Icon(Icons.mail),
+                  error: "Email not Valid",
+                  controller: TextEditingController(),
+                  validator: (value) {
+                    // 1. Check if the field is empty
+                    if (value == null || value.trim().isEmpty) {
+                      return 'Email address is required';
+                    }
+                    // 4. Return null if the email passes validation
+                    return null;
+                  },
+                ),
                 SizedBox(height: 30),
-                Textbox(Caption: "Enter Your Password", image: Icons.lock),
+                CustomSign(
+                  key: key,
+                  hint: "Enter Your Password",
+                  icon: Icon(Icons.lock),
+                  error: "Password not Valid",
+                  controller: TextEditingController(),
+                  validator: (value) {
+                    // 1. Check if the field is empty
+                    if (value == null || value.trim().isEmpty) {
+                      return 'Password is required';
+                    }
+                    if (value.length < 8) {
+                      return 'Password should be 8 Characters at least';
+                    }
+                    // 4. Return null if the email passes validation
+                    return null;
+                  },
+                ),
                 SizedBox(height: 30),
                 Button(),
               ],

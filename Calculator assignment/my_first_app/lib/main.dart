@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'package:my_first_app/KeyBoard.dart';
+
+import 'Home.dart';
 
 void main() {
-  runApp(MaterialApp(initialRoute: Home.routeName));
+  runApp(MaterialApp(home: home()));
 }
