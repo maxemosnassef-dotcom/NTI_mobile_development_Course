@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:my_first_app/auth/sign_in_view.dart';
 
 class OnBoarding extends StatelessWidget {
   static const String routeName = '/onboarding';
@@ -28,7 +29,7 @@ class OnBoarding extends StatelessWidget {
           ),
         ],
         onDone: () {
-          Navigator.pushReplacementNamed(context, '/');
+          Navigator.pushReplacementNamed(context, SignInView.routeName);
         },
         showSkipButton: true,
         skip: const Text('Skip'),

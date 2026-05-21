@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_first_app/first_Page.dart';
 import 'package:my_first_app/on_Boarding.dart';
+import 'package:my_first_app/auth/sign_in_view.dart';
 // import 'package:flutter/flutter_screenutil';
 
 class my_App extends StatelessWidget {
@@ -14,7 +16,11 @@ class my_App extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
-        routes: {'/': (context) => OnBoarding()},
+        routes: {
+          '/': (context) => OnBoarding(),
+          SignInView.routeName: (context) => SignInView(),
+          FirstPage.routeName: (context) => FirstPage(),
+        },
       ),
     );
   }
