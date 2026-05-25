@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_first_app/first_Page.dart';
-import 'package:my_first_app/first_Page.dart';
 
 class SmallButton extends StatelessWidget {
-  const SmallButton({super.key});
+  final VoidCallback pressedFunction;
+  const SmallButton({super.key, required this.pressedFunction});
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(),
       child: Container(
         alignment: Alignment.center,
         width: 80.h,
@@ -19,9 +20,7 @@ class SmallButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(50.r),
         ),
       ),
-      onPressed: () {
-        Navigator.pushReplacementNamed(context, FirstPage.routeName);
-      },
+      onPressed: pressedFunction,
     );
   }
 }

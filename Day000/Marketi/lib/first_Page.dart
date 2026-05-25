@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FirstPage extends StatefulWidget {
-  @override
   static const String routeName = '/firstpage';
   var isChecked = false;
 

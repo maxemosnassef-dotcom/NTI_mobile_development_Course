@@ -1,8 +1,10 @@
+import 'package:Marketi/auth/forgot_password_view.dart';
+import 'package:Marketi/auth/sign_in_view.dart';
+import 'package:Marketi/first_Page.dart';
+import 'package:Marketi/onboarding/on_Boarding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_first_app/first_Page.dart';
-import 'package:my_first_app/on_Boarding.dart';
-import 'package:my_first_app/auth/sign_in_view.dart';
+
 // import 'package:flutter/flutter_screenutil';
 
 class my_App extends StatelessWidget {
@@ -17,9 +19,10 @@ class my_App extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
         routes: {
-          '/': (context) => OnBoarding(),
+          '/': (context) => OnBoarding(title: 'Onboarding'),
           SignInView.routeName: (context) => SignInView(),
           FirstPage.routeName: (context) => FirstPage(),
+          ForgotPasswordView.routeName: (context) => ForgotPasswordView(),
         },
       ),
     );
