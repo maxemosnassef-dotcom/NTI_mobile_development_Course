@@ -2,8 +2,14 @@
 workspace:
   id: 93de4bff-1676-49bf-882c-5c5b7455ae07
 
-# All resources in the `postman/` folder are automatically registered in Local View.
-# Point to additional files outside the `postman/` folder to register them individually. Example:
-#localResources:
-#  collections:
-#    - ../tests/E2E Test Collection/
+localResources:
+  docs:
+    - ..\Flutter_NTI-main\Tasks\Session8\marketi_nti\ios\Runner\Assets.xcassets\LaunchImage.imageset\README.md
+    - ..\Flutter_NTI-main\Tasks\Session6\calculator\ios\Runner\Assets.xcassets\LaunchImage.imageset\README.md
+    - ..\Flutter_NTI-main\Tasks\Session4\login_screen\ios\Runner\Assets.xcassets\LaunchImage.imageset\README.md
+    - ..\Flutter_NTI-main\Tasks\Session5\hello_flutter\ios\Runner\Assets.xcassets\LaunchImage.imageset\README.md
+    - ..\Flutter_NTI-main\Tasks\Session4\hello_flutter\ios\Runner\Assets.xcassets\LaunchImage.imageset\README.md
+    - ..\Day7 - Copy -
+      Copy\my_first_app\ios\Runner\Assets.xcassets\LaunchImage.imageset\README.md
+    - ..\Day6\my_first_app\ios\Runner\Assets.xcassets\LaunchImage.imageset\README.md
+et\README.md
